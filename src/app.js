@@ -42,11 +42,11 @@ app.get('/api/servicios', async (req, res) => {
     }
 });
 
+// Ajuste aplicado aquí: trae todos los odontólogos e incluye el campo "activo"
 app.get('/api/odontologos', async (req, res) => {
     try {
-        // Solo trae los odontólogos que tienen activo = TRUE
         const [rows] = await pool.query(
-            'SELECT id_odontologo, nombre, apellido, especialidad, telefono FROM odontologos WHERE activo = TRUE'
+            'SELECT id_odontologo, nombre, apellido, especialidad, telefono, activo FROM odontologos'
         );
         res.json(rows);
     } catch (error) {
@@ -134,7 +134,6 @@ app.post('/api/citas', async (req, res) => {
     try {
         const { id_paciente, id_odontologo, id_servicio, fecha_hora, notas } = req.body;
 
-        // Bloquea el horario si el odontólogo ya tiene una cita Pendiente o Confirmada
         const [ocupado] = await pool.query(
             `SELECT COUNT(*) AS total FROM citas 
              WHERE id_odontologo = ? AND fecha_hora = ? AND estado IN ('Pendiente', 'Confirmada')`,
