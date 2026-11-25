@@ -1,0 +1,31 @@
+{
+  "name": "dentalia-api",
+  "version": "1.0.0",
+  "description": "",
+    "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4l3j4nd70/dentalia-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/4l3j4nd70/dentalia-api/issues"
+  },
+  "homepage": "https://github.com/4l3j4nd70/dentalia-api#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "mysql2": "^3.24.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
