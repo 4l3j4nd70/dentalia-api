@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Login from './components/login';
+import Login from './components/Login';
 import Layout from './components/Layout';
 import AgendaCitas from './components/AgendaCitas';
 import NuevaCita from './components/NuevaCita';
